@@ -1,0 +1,29 @@
+<h1>Difference between function declaration and function expression</h1>
+<!-- 1. -->
+<script type="text/javascript">
+  function funDeclaration() {
+    //function declaration will have function name
+    console.log("funDeclaration");
+  }
+
+  let funexpression = function () {
+    //function expression will not have function name but it is assigned to a variable
+    console.log("funexpression");
+  };
+
+  //<!-- 2. -->
+  // if you have console statments before function declarations
+  console.log(funDeclaration1()); // it works - function declaration is avaiable
+  console.log(funexpression1()); //uncaught referenceerror: funexpression1 is not defined at window.onload
+  function funDeclaration1() {
+    console.log("funDeclaration1");
+  }
+
+  let funexpression1 = function () {
+    console.log("funexpression1");
+  };
+</script>
+
+<!--3.
+you cannot pass one function declaration to other
+you can pass one function expression to other function expression as it is varaible only -->

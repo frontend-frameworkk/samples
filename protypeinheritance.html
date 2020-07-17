@@ -1,0 +1,31 @@
+<h1>prototype inheritance example</h1>
+
+<script type="text/javascript">
+  let car = function (model) {
+    //constructor function
+
+    this.model = model;
+  };
+
+  car.prototype.getModel = function () {
+    //Every object has a property called "prototype" where we can add properties or
+    methods;
+    return this.model;
+  };
+
+  let toyota = new car("toyota"); // the newely created object can inheritant automatically the properties from the parent like the way it can access getModel() method from parent
+  {
+    console.log(toyota.getModel());
+  }
+
+  let nissan = new car("nissan");
+  {
+    console.log(nissan.getModel());
+  }
+</script>
+
+<!-- // Every object has a property called prototype where we can add properties or
+methods ,when you create new object from this object ,the newely created object
+can inheritant automatically the properties from the parent like the way it can
+access getModel() method from parent ,it uses if its avaibale in  child or else it can
+inherate from parent -->

@@ -1,0 +1,102 @@
+<h1>closures example</h1>
+
+<!--  *incrementing the count using global variable which is not way to declare it as global which may change in later in application by someone
+  <script type="text/javascript">
+  var clickCount = 0;
+</script>
+
+<input type="button" value="click me" onclick="alert(++clickCount)" />
+
+//output: incrementing value 1 2 3...
+-->
+
+<!-- *to avoid previous global varaible , to protect the variable we need to declare the var local  -->
+
+<!-- <script type="text/javascript">
+  function incrementClickCount() {
+    var clickcount = 0;
+    return ++clickcount;
+  }
+</script>
+
+<input type="button" value="click me" onclick="alert(incrementClickCount())" />  // output:incrementing always 1 as it is intializing everytime to 0 and
+incrementing by 1 its not correct to solve this issue, we have comeup using
+closures concept by creating aoonymous functions. anonymous function means
+function without function name -->
+
+<!-- *using closures we can solve above problem
+     <script type="text/javascript">
+  var incrementClickCount = (function () {
+    var clickcount = 0;
+    return function () {
+      return ++clickcount;
+    };
+  })();
+</script>
+
+<input type="button" value="click me" onclick="alert(incrementClickCount)" />
+
+ output: incrementClickCount   //var incrementClickCount call outer function and is returing a inner function
+ƒ () {
+      return ++clickcount;
+    } -->
+
+<script type="text/javascript">
+  var incrementClickCount = (function () {
+    var clickcount = 0;
+    return function () {
+      return ++clickcount;
+    };
+  })();
+</script>
+
+<input type="button" value="click me" onclick="alert(incrementClickCount())" />
+
+<!--*********************************************************************************************
+    In this video we will discuss a simple JavaScript closure example. Every time we click a button on a web page, we want to increment the click count by 1. There are several ways we can do this.
+
+Using a global variable and incrementing it everytime we click the button : The problem with this approach is that, since clickCount is a global variable any script on the page can accidentally change the variable value.
+
+[script type="text/javascript"]
+    var clickCount = 0;
+[/script]
+[input type="button" value="Click Me" onclick="alert(++clickCount);" /]
+
+Using a local variable with in a function and incrementing it by calling the function : The problem with this approach is that, click count is not incremented beyond 1, no matter how many times you click the button.
+
+[script type="text/javascript"]
+    function incrementClickCount() 
+    {
+        var clickCount = 0;
+        return ++clickCount;
+    }
+[/script]
+[input type="button" value="Click Me" onclick="alert(incrementClickCount());" /]
+
+Using a JavaScript closure : A closure is an inner function that has access to the outer function’s variables in addition to it's own variables and global variables. In simple terms a closure is function inside a function. These functions, that is the inner and outer functions could be named functions or anonymous functions. In the example below we have an anonymous function inside another anonymous function. The variable incrementClickCount is assigned the return value of the self invoking anonymous function.
+
+[script type="text/javascript"]
+    var incrementClickCount = (function () 
+    {
+        var clickCount = 0;
+        return function () 
+        {
+            return ++clickCount;
+        }
+    })();
+[/script]
+[input type="button" value="Click Me" onclick="alert(incrementClickCount);" /]
+
+In the example above, in the alert function we are calling the variable incrementClickCount without parentheses. At this point, when you click the button, you get the inner anonymous function expression in the alert. The point I want to prove here is that, the outer self-invoking anonymous function run only once and sets clickCount variable to ZERO, and returns the inner function expression. Inner function has access to clickCount variable. Now every time we click the button, the inner function increments the clickCount variable. The important point to keep in mind is that no other script on the page has access to clickCount variable. The only way to change the clickCount variable is thru incrementClickCount function.
+
+[script type="text/javascript"]
+    var incrementClickCount = (function () 
+    {
+        var clickCount = 0;
+        return function () 
+        {
+            return ++clickCount;
+        }
+    })();
+[/script]
+[input type="button" value="Click Me" onclick="alert(incrementClickCount());" /]-->

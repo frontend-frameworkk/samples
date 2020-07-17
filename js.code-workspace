@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "..\\ts-samples"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "js-oop"
+  }
+}

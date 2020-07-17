@@ -1,0 +1,14 @@
+<script>
+  setTimeout(function () {
+    console.log("a");
+  }, 0);
+  console.log("b");
+  console.log("c");
+</script>
+
+<!-- output:
+b
+c
+a
+
+though time is set to 0 , it will execute in a stack b ,c and next asyncronous call back events will execute which is a-->

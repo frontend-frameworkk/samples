@@ -1,0 +1,39 @@
+Microsoft Windows [Version 10.0.18362.900]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\Venkat Enjam>npm install -g typescript  //install
+C:\Users\Venkat Enjam\AppData\Roaming\npm\tsc -> C:\Users\Venkat Enjam\AppData\Roaming\npm\node_modules\typescript\bin\tsc
+C:\Users\Venkat Enjam\AppData\Roaming\npm\tsserver -> C:\Users\Venkat Enjam\AppData\Roaming\npm\node_modules\typescript\bin\tsserver
++ typescript@3.9.5
+added 1 package from 1 contributor in 5.546s
+
+C:\Users\Venkat Enjam>tsc --version //check the ts version
+
+C:\Users\Venkat Enjam>node main.ts //throwed error as we are not pointing to the ts folder
+internal/modules/cjs/loader.js:1032
+  throw err;
+  ^
+
+Error: Cannot find module 'C:\Users\Venkat Enjam\main.ts'
+[90m    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:1029:15)[39m
+[90m    at Function.Module._load (internal/modules/cjs/loader.js:898:27)[39m
+[90m    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)[39m
+[90m    at internal/main/run_main_module.js:17:47[39m {
+  code: [32m'MODULE_NOT_FOUND'[39m,
+  requireStack: []
+}
+
+C:\Users\Venkat Enjam>cd ts-samples //point to the ts folder
+
+C:\Users\Venkat Enjam\ts-samples>tsc main.ts //tsc is timescript compiler
+
+
+C:\Users\Venkat Enjam\ts-samples>node main.ts //execute in node
+hello world
+
+
+
+
+mkdir ts-hell0 - creating folder
+cd ts-hello
+code main.ts- cretaing file

@@ -1,0 +1,27 @@
+typescript follows object oriented fundamentals
+
+typescript is a superset of javascript
+
+typecript latest features
+1)strong typing - 
+not required to mention type of varaible like we mention type in java and .net
+2)object oriented features - typescript provides few object oriented features which we have missed in javascript.
+3)compile time errors - we can errors at compile time than runtime , of-course not all errors but max errors,
+ der is a compilation step involved for code,can fix those errors before deploying and run the code,
+4)great tooling - we csn access to great tools , intelisense we get in code editor
+
+typecript -> transpile ->javascript (browser can understand)
+
+C:\Users\Venkat Enjam\ts-samples> tsc main.ts  //to transpile the ts to js
+>ls  // you will have 2 files
+main.js main.ts
+code main.js  // will take you the editor of main.js file
+
+in angular when you call ng serve
+angular cli will call transpiler under the hood , we need to transpile manually
+
+
+we have es5 which is supported by all the browsers
+es6(2015)
+es2016
+es2017 so on ...
